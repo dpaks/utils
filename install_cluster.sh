@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo swapoff -a
-sudo kubeadm init --kubernetes-version 1.12.5 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all --apiserver-advertise-address=<ip>
+sudo kubeadm init --kubernetes-version 1.12.5 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all
 mkdir -p $HOME/.kube
 sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
