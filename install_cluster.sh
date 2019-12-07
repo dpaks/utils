@@ -4,9 +4,9 @@ host=$1
 
 sudo swapoff -a
 if [[ -z $host ]]; then
-    sudo kubeadm init --kubernetes-version 1.15 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all
+    sudo kubeadm init --kubernetes-version 1.15.6 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all
 else
-    sudo kubeadm init --kubernetes-version 1.15 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all --apiserver-advertise-address=$host
+    sudo kubeadm init --kubernetes-version 1.15.6 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=all --apiserver-advertise-address=$host
 fi
 mkdir -p $HOME/.kube
 sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
