@@ -21,5 +21,6 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 apt-get update -y
-apt install kubernetes-cni=0.6.0-00 --allow-downgrades -y;
-apt-get install -y kubelet=1.12.5-00 kubeadm=1.12.5-00 kubectl=1.12.5-00 --allow-downgrades
+#apt install kubernetes-cni=0.6.0-00 --allow-downgrades -y;
+#apt-get install -y kubelet=1.12.5-00 kubeadm=1.12.5-00 kubectl=1.12.5-00 --allow-downgrades
+sudo apt-get install -y kubelet kubeadm kubectl
