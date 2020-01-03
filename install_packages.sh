@@ -23,4 +23,6 @@ EOF
 apt-get update -y
 #apt install kubernetes-cni=0.6.0-00 --allow-downgrades -y;
 #apt-get install -y kubelet=1.12.5-00 kubeadm=1.12.5-00 kubectl=1.12.5-00 --allow-downgrades
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm=1.15.6-00 --allow-downgrades && apt-mark hold kubeadm
+sudo apt-mark unhold kubectl && apt-get update && apt-get install -y kubectl=1.15.6-00 --allow-downgrades && apt-mark hold kubectl
+sudo apt-mark unhold kubelet && apt-get update && apt-get install -y kubelet=1.15.6-00 --allow-downgrades && apt-mark hold kubelet
